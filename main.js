@@ -1,31 +1,49 @@
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
+// Data for featured speakers
+const speakers = [
+  {
+    name: "John Doe",
+    title: "Pro Gamer - Team A",
+    image: "Icons/spk1.jpeg",
+    bio: "John is a world-renowned esports player with multiple championships."
+  },
+  {
+    name: "Jane Smith",
+    title: "Coach - Team B",
+    image: "Icons/spk2.jpeg",
+    bio: "Jane has over 10 years of experience coaching top-level esports teams."
+  },
+  {
+    name: "Mike Ross",
+    title: "Streamer & Analyst",
+    image: "Icons/spk3.jpeg",
+    bio: "Mike is a popular esports analyst and a seasoned live-streamer."
+  },
+  {
+    name: "Lisa Wong",
+    title: "Caster - Global League",
+    image: "Icons/spk4.jpeg",
+    bio: "Lisa is a commentator known for her insightful and exciting game breakdowns."
+  }
+];
 
-// Set canvas dimensions
-canvas.width = 1200;
-canvas.height = 300;
+// Function to create speaker cards dynamically
+function generateSpeakers() {
+  const speakersContainer = document.getElementById("speakers-container");
 
-// Set background color
-ctx.fillStyle = '#000033';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+  speakers.forEach(speaker => {
+    const speakerCard = document.createElement("div");
+    speakerCard.classList.add("speaker-item");
 
-// Set text color
-ctx.fillStyle = '#ffd700';
+    speakerCard.innerHTML = `
+      <img src="${speaker.image}" alt="${speaker.name}">
+      <h4>${speaker.name}</h4>
+      <p>${speaker.title}</p>
+      <p>${speaker.bio}</p>
+    `;
 
-// Define font
-ctx.font = '70px Arial';
+    speakersContainer.appendChild(speakerCard);
+  });
+}
 
-// Draw logo
-ctx.beginPath();
-ctx.moveTo(250, 100);
-ctx.lineTo(350, 200);
-ctx.lineTo(450, 100);
-ctx.lineTo(350, 0);
-ctx.closePath();
-ctx.stroke();
-
-// Draw text
-ctx.fillText('LOL ESPORTS', 380, 170);
-
-// Display canvas
-document.body.appendChild(canvas);
+// Call the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", generateSpeakers);
