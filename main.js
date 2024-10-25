@@ -23,6 +23,18 @@ const speakers = [
     title: "Caster - Global League",
     image: "Icons/spk4.jpeg",
     bio: "Lisa is a commentator known for her insightful and exciting game breakdowns."
+  },
+  {
+    name: "John Doe",
+    title: "Pro Gamer - Team A",
+    image: "Icons/spk1.jpeg",
+    bio: "John is a world-renowned esports player with multiple championships."
+  },
+  {
+    name: "Jane Smith",
+    title: "Coach - Team B",
+    image: "Icons/spk2.jpeg",
+    bio: "Jane has over 10 years of experience coaching top-level esports teams."
   }
 ];
 
@@ -35,10 +47,12 @@ function generateSpeakers() {
     speakerCard.classList.add("speaker-item");
 
     speakerCard.innerHTML = `
-      <img src="${speaker.image}" alt="${speaker.name}">
+      <div><img src="${speaker.image}" alt="${speaker.name}"></div>
+      <section>
       <h4>${speaker.name}</h4>
-      <p>${speaker.title}</p>
+      <h6>${speaker.title}</h6>
       <p>${speaker.bio}</p>
+      </section>
     `;
 
     speakersContainer.appendChild(speakerCard);
@@ -47,3 +61,6 @@ function generateSpeakers() {
 
 // Call the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", generateSpeakers);
+
+
+

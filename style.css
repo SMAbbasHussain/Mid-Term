@@ -1,4 +1,7 @@
-/* General Styling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -8,17 +11,71 @@ body {
   color: #333;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.total-content {
+  padding-top: 300px;
+}
+
+.header-main {
+  background-image: url("Icons/background-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .header {
   text-align: center;
-  padding: 2rem 1rem;
   color: white;
   position: relative;
 }
 
-.outer-body {
-  padding-top: 300px;
-  background-color: black;
+.links {
+  list-style-type: none;
+  display: flex;
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 100px;
 }
+
+.links img {
+  display: inline-block;
+  border-radius: 50%;
+  max-height: 70%;
+  vertical-align: middle;
+  padding-left: 15px;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  box-sizing: border-box;
+  width: 75px;
+  display: inline-block;
+}
+
+
+.space {
+  width: 100px;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(72, 72, 72);
+  padding: 0 16px 0 16px;
+}
+
+
+.outer-body {
+  background-color: #12151b;
+}
+
 
 .inner-body {
   margin: 0 auto;
@@ -36,21 +93,40 @@ body {
 
 .logo-img {
   max-width: 200px;
-  margin-right: 300px;
+  margin-right: 100px;
+  margin-left: 100px;
   display: inline-block;
 }
 
 .logo {
   display: flex;
-  margin: 0 0 100px 0;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 
 .logo img {
-  max-width: 700px;
+  max-width: 100%;
   margin-bottom: -250px;
+  object-fit: cover;
+}
+
+.nav-menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#nav-menu {
+  width: 100%;
+  transition: top 0.3s;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .nav-menu ul {
@@ -60,12 +136,14 @@ body {
   justify-content: center;
   gap: 2rem;
   height: 60px;
+  padding-right: 8px; 
 }
 
 .nav-menu ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100px;
 }
 
 .nav-menu ul li a {
@@ -81,8 +159,13 @@ body {
   text-align: left;
   padding-left: 200px;
   padding-bottom: 200px;
+  background-image: url("Icons/Golden-Background-HD-Copy.jpg");
+  background-size: cover; /* Makes sure the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-clip: text;
+  -webkit-background-clip: text; /* Clips the background to the text (Safari, Chrome) */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
 }
-
 
 .header-title1 {
   font-size: 3.5rem;
@@ -90,13 +173,31 @@ body {
   color: #ff4500;
   text-align: left;
   padding-left: 200px;
+  position: relative;
+  background-image: url("Icons/Golden-Background-HD-Copy.jpg");
+  background-size: cover; /* Makes sure the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-clip: text;
+  -webkit-background-clip: text; /* Clips the background to the text (Safari, Chrome) */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+}
+
+.header-title1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("path/to/your-background.jpg") center/cover;
+  z-index: -1; /* Places the background behind the text */
 }
 
 .header-subtitle {
   text-align: left;
   padding-left: 200px;
   font-size: 2rem;
-  margin: 0.5rem 0;
+  margin: 0;
   padding-top: 200px;
   color: #ff6347;
 }
@@ -117,34 +218,53 @@ body {
   color: rgb(15, 14, 14);
   text-align: left;
   margin-left: 200px;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  margin-bottom: 0;
 }
 
 /* Program Section */
+
+#outer-body2 {
+  background-color: white;
+}
+
 .program-section {
-  background-color: #282828;
+  background-color: #12151b;
   color: white;
-  padding: 3rem 1rem;
+  margin: 0 auto;
+  width: 1200px;
+  padding: 3rem 0;
   text-align: center;
+  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .program-grid {
-  width: 1000px;
+  width: 900px;
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 2px;
 }
 
 .program-item {
-  background-color: #333;
+  background-color: #303338;
   padding: 1rem;
-  border-radius: 10px;
+}
+
+.program-item:hover {
+  border: 1px solid white;
+}
+
+.program-item img {
+  border-radius: 100%;
+  max-width: 100px;
+  max-height: 100px; 
 }
 
 .program-item h4 {
   font-size: 1.5rem;
   color: #ff6347;
+  margin: 0;
 }
 
 .program-item p {
@@ -163,9 +283,11 @@ body {
 /* Speakers Section */
 .speakers-section {
   background-color: white;
-  color: white;
-  padding: 3rem 1rem;
+  padding: 3rem 0 0 0;
   text-align: center;
+  margin: 0 auto;
+  width: 1200px;
+  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .speakers-section h3 {
@@ -176,31 +298,91 @@ body {
 
 .speakers-grid {
   display: grid;
-  grid-template: 50% 50% / 50% 50%;
+  grid-template: 30% 30% 30% / 50% 50%;
   gap: 1.5rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  height: auto;
 }
 
 .speaker-item {
-  background-color: #333;
-  padding: 1.5rem;
+  background-color: white;
+  padding: 0.5rem 0.1rem;
   border-radius: 10px;
   text-align: center;
+  display: grid;
+  grid-template: 100% / 40% 60%;
+}
+
+.speaker-item section {
+  text-align: left;
+  padding-left: 10px;
 }
 
 .speaker-item img {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .speaker-item h4 {
-  margin: 1rem 0 0.5rem;
+  margin: 0;
   font-size: 1.5rem;
+  color: black;
+}
+
+.speaker-item h6 {
   color: #ff6347;
+  font-size: 16px;
+  margin: 0;
+  padding-top: 10px;
 }
 
 .speaker-item p {
   font-size: 1rem;
-  color: #ccc;
+  color: black;
+}
+
+.partners {
+  margin-top: 100px;
+  height: 150px;
+  background-color: #414146;
+  width: 100%; 
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.partners p {
+  font-size: 30px;
+  color: grey;
+  margin: 15px 0;
+}
+
+.copyright {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #12151b;
+}
+
+.copyright img {
+  display: inline-block;
+  max-width: 200px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.img-div {
+  display: inline-block;
+  margin-right: 100px;
+}
+
+.copyright p{
+  display: inline-block;
 }
