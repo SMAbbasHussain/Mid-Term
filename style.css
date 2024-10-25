@@ -58,7 +58,6 @@ ul {
   display: inline-block;
 }
 
-
 .space {
   width: 100px;
 }
@@ -71,24 +70,14 @@ ul {
   padding: 0 16px 0 16px;
 }
 
-
 .outer-body {
   background-color: #12151b;
 }
-
 
 .inner-body {
   margin: 0 auto;
   background-color: white;
   width: 1200px;
-}
-
-.logo1 {
-  display: inline-block;
-  margin: 0 0 100px 0;
-  width: 200px !important;
-  align-items: center;
-  justify-content: center;
 }
 
 .logo-img {
@@ -136,7 +125,7 @@ ul {
   justify-content: center;
   gap: 2rem;
   height: 60px;
-  padding-right: 8px; 
+  padding-right: 8px;
 }
 
 .nav-menu ul li {
@@ -258,7 +247,7 @@ ul {
 .program-item img {
   border-radius: 100%;
   max-width: 100px;
-  max-height: 100px; 
+  max-height: 100px;
 }
 
 .program-item h4 {
@@ -347,7 +336,7 @@ ul {
   margin-top: 100px;
   height: 150px;
   background-color: #414146;
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -383,6 +372,6 @@ ul {
   margin-right: 100px;
 }
 
-.copyright p{
+.copyright p {
   display: inline-block;
 }
